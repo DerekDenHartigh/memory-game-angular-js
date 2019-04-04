@@ -1,0 +1,21 @@
+{
+  "name": "angular-seed",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A starter project for AngularJS",
+  "repository": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-loader": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "html5-boilerplate": "0.0.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.7.5",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -p 8000 -c-1 ./app"
+  }
+}
