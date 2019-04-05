@@ -1,21 +1,13 @@
-<!-- <div class="card ${card.isMatched ? 'matched' : ''}" style="order: ${card.order || '0'}">
-  <div class="card-inner card-inner__front ${card.isFlipped ? 'hide' : ''}">
-    ${card.id}
-  </div>
-  <div class="card-inner card-inner__back ${!card.isFlipped ? 'hide' : ''}">
-    <img src="${card.image}" alt="${card.name}" title="Can you find the matching ${card.name}?" class="card-image" />
-  </div>
-</div> -->
-
-<div 
-  ng-class="{ 'matched' : ctrl.isMatched }"
-  ng-style="{ 'order': ctrl.order || '0'}"
-  class="card">
-  <div
-    class="card-inner"
-    ng-click="ctrl.isFlipped = !ctrl.isFlipped"
-    ng-class="{ 'card-inner__front' : ctrl.isFlipped, 'card-inner__back' : !ctrl.isFlipped }">
+<div ng-class="{ 'matched' : ctrl.isMatched }"
+     ng-style="{ 'order': ctrl.order || '0'}"
+     class="card">
+  <div class="card-inner"
+       ng-click="ctrl.isFlipped = !ctrl.isFlipped"
+       ng-class="{ 'card-inner__front' : ctrl.isFlipped, 'card-inner__back' : !ctrl.isFlipped }">
     <span ng-if="!ctrl.isFlipped">{{ ctrl.id }}</span>
-    <img ng-if="ctrl.isFlipped" ng-src="{{ctrl.image}}" alt="{{ctrl.name}}" title="Can you find the matching {{ ctrl.name }}?" />
+    <img ng-if="ctrl.isFlipped"
+         ng-src="{{ ctrl.image }}"
+         alt="{{ ctrl.name }}"
+         title="Can you find the matching {{ ctrl.name }}?" />
   </div>
 </div>
