@@ -6,7 +6,7 @@ class GameComponent {
     this.controller = GameController;
     this.controllerAs = 'ctrl';
     this.bindings = {
-      numOfCards: '<'
+      difficulty: '<'
     }
   }
 }
