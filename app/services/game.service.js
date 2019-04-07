@@ -1,5 +1,5 @@
 import Card from '../models/card.js';
-
+import Timer from '../models/timer.js';
 class GameService {
   /**
      * Tracks the progress of the game and manages the logic for it
@@ -11,23 +11,31 @@ class GameService {
     this.matchedCards = [];
     this.flippedCards = [];
     this.IMAGE_DIR = '../../assets/images';
+
+    this.timer = new Timer();
   }
 
   /**
    * Initializes the game
    */
-  init() {
-    this.createCards();
+  init(numOfCards) {
+    this.numOfCards = numOfCards;
+    this.createCards(numOfCards);
+    this.setupTimer();
+  }
+
+  setupTimer() {
+    this.timer.start();
   }
 
   /**
    * Creates an array of cards
    *
    */
-  createCards() {
+  createCards(numOfCards) {
     let i = 1,
       group = 0,
-      groupsOfTwenty = Math.floor(this.numOfCards / 20), // Because we have a possible 20 pairs
+      groupsOfTwenty = Math.floor(numOfCards / 20), // Because we have a possible 20 pairs
       kittens = [],
       puppies = [];
     // Empty out all arrays
@@ -51,7 +59,7 @@ class GameService {
     puppies.forEach(puppy => cuteBabes.push(puppy));
 
     // Set up initial cards
-    for (i = 0; i < this.numOfCards; i++) {
+    for (i = 0; i < numOfCards; i++) {
       cuteBabes[i].id = i + 1;
       this.cards.push(cuteBabes[i]);
     }

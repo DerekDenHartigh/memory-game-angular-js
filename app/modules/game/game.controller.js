@@ -11,16 +11,16 @@ class GameController {
   _setUpGame() {
     switch (this.difficulty) {
       case 'easy':
-        this.GameService.createCards(10);
+        this.GameService.init(10);
         break;
       case 'medium':
-        this.GameService.createCards(20);
+        this.GameService.init(20);
         break;
       case 'hard':
-        this.GameService.createCards(40);
+        this.GameService.init(40);
         break;
       case 'extra hard':
-        this.GameService.createCards(100);
+        this.GameService.init(100);
         break;
       default:
         this.GameService.createCards(20);

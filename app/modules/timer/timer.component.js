@@ -6,8 +6,8 @@ class TimerComponent {
     this.controller = TimerController;
     this.controllerAs = 'ctrl';
     this.bindings = {
-      running: '<'
-    }
+      timer: '<'
+    };
   }
 }
 
