@@ -1,5 +1,5 @@
 class GameController {
-  constructor(GameService) { 
+  constructor(GameService) {
     this.GameService = GameService;
   }
 
