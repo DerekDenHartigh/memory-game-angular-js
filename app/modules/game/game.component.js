@@ -7,7 +7,7 @@ class GameComponent {
     this.controllerAs = 'ctrl';
     this.bindings = {
       difficulty: '<'
-    }
+    };
   }
 }
 

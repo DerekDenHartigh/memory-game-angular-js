@@ -166,6 +166,16 @@ class GameService {
       }
     }
   }
+
+  start(){
+    console.log('game srvice start called: ');
+  }
+  pause() {
+    console.log('game service pause called');
+  }
+  reset() {
+    console.log('game service reset called');
+  }
 }
 
 export default GameService;
