@@ -1,11 +1,5 @@
 class GameControlsController {
-  constructor() {
-    // localize variables
-
-  }
-  $onInit() {
-    // initialize variables
-  }
+  constructor() { } // These are just buttons that bubble up
 }
 
 GameControlsController.$inject = [];

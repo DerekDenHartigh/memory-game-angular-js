@@ -1,6 +1,6 @@
 import Timer from '../../../models/timer.js';
 
-class TimerController {
+class GameTimerController {
     constructor() {
         this.timer = new Timer();
     }
@@ -18,6 +18,6 @@ class TimerController {
     }
 }
 
-TimerController.$inject = [];
+GameTimerController.$inject = [];
 
-export default TimerController;
+export default GameTimerController;

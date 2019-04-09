@@ -3,7 +3,7 @@ import Timer from '../../models/timer.js';
 class GameController {
   constructor($interval, GameService) {
     this.$interval = $interval;
-    this.inteval;
+    this.interval;
     this.GameService = GameService;
 
     this.timer = new Timer();

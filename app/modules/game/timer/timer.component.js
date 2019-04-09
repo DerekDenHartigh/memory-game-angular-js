@@ -1,9 +1,9 @@
-import TimerController from './timer.controller.js';
+import GameTimerController from './timer.controller.js';
 
-class TimerComponent {
+class GameTimerComponent {
   constructor(){
     this.templateUrl = './modules/game/timer/timer.html';
-    this.controller = TimerController;
+    this.controller = GameTimerController;
     this.controllerAs = 'ctrl';
     this.bindings = {
       timer: '<'
@@ -11,4 +11,4 @@ class TimerComponent {
   }
 }
 
-export default TimerComponent;
+export default GameTimerComponent;
