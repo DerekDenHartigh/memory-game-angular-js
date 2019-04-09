@@ -5,28 +5,22 @@ class Timer {
     this.minutes = 0;
     this.seconds = 0;
     this.milliseconds = 0;
-    console.log('Timer Model Constructed: ', this);
   }
 
   start() {
-    console.log('start rnning');
-    if (!this.interval) {
-      this.interval = setTimeout(() => {
-        this.milliseconds += 5;
-        if (this.milliseconds >= 999) {
-          this.milliseconds = this.milliseconds - 999;
-          this.seconds += 1;
+    this.milliseconds += 5;
+    if (this.milliseconds >= 999) {
+      this.milliseconds = this.milliseconds - 999;
+      this.seconds += 1;
 
-          if (this.seconds === 59) {
-            this.minutes += 1;
-            this.seconds = 0;
-            if (this.minutes === 59) {
-              this.hours += 1;
-              this.minutes = 0;
-            }
-          }
+      if (this.seconds === 59) {
+        this.minutes += 1;
+        this.seconds = 0;
+        if (this.minutes === 59) {
+          this.hours += 1;
+          this.minutes = 0;
         }
-      }, 5);
+      }
     }
   }
 }

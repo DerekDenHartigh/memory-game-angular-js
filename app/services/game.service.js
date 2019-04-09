@@ -1,5 +1,6 @@
 import Card from '../models/card.js';
 import Timer from '../models/timer.js';
+
 class GameService {
   /**
      * Tracks the progress of the game and manages the logic for it
@@ -21,7 +22,7 @@ class GameService {
   init(numOfCards) {
     this.numOfCards = numOfCards;
     this.createCards(numOfCards);
-    this.setupTimer();
+    // this.setupTimer();
   }
 
   setupTimer() {

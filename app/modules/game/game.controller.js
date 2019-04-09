@@ -1,11 +1,26 @@
+import Timer from '../../models/timer.js';
+
 class GameController {
-  constructor(GameService) {
+  constructor($interval, GameService) {
+    this.$interval = $interval;
+    this.inteval;
     this.GameService = GameService;
+
+    this.timer = new Timer();
   }
 
   $onInit() {
     console.log('Game Controller Initialized', this);
     this._setUpGame();
+    // this.startGame();
+  }
+
+  startGame() {
+    if (!this.interval) {
+      this.interval = this.$interval(() => {
+        this.timer.start();
+      }, 5);
+    }
   }
 
   _setUpGame() {
@@ -29,6 +44,6 @@ class GameController {
   }
 }
 
-GameController.$inject = ['GameService'];
+GameController.$inject = ['$interval', 'GameService'];
 
 export default GameController;

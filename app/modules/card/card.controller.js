@@ -1,12 +1,8 @@
 class CardController {
-  constructor(id, name, image, order) { 
-    this.id = id;
-    this.name = name;
-    this.image = image;
-    this.order = order;
+  constructor() {
   }
   $onInit() {
-    console.log('Card Controller Initialized: ', this);
+    // console.log('Card Controller Initialized: ', this);
   }
 }
 

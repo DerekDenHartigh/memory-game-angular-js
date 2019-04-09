@@ -1,5 +1,13 @@
+import Timer from '../../../models/timer.js';
+
 class TimerController {
-    constructor() {}
+    constructor() {
+        this.timer = new Timer();
+    }
+
+    start() {
+        return this.getFulLTimerString();
+    }
 
     getTimeString(timeType, zeroPadStart) {
         return timeType.toString().padStart(zeroPadStart, '0');
@@ -10,6 +18,6 @@ class TimerController {
     }
 }
 
-TimerController.$inject = ['$interval'];
+TimerController.$inject = [];
 
 export default TimerController;
