@@ -1,9 +1,5 @@
 class CardController {
-  constructor() {
-  }
-  $onInit() {
-    // console.log('Card Controller Initialized: ', this);
-  }
+  constructor() {}
 }
 
 CardController.$inject = [];

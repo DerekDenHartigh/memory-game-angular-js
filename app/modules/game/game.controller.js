@@ -10,9 +10,7 @@ class GameController {
   }
 
   $onInit() {
-    console.log('Game Controller Initialized', this);
     this._setUpGame();
-    // this.startGame();
   }
 
   startGame() {
@@ -21,6 +19,19 @@ class GameController {
         this.timer.start();
       }, 5);
     }
+  }
+
+  pauseGame() {
+
+    if (this.interval) {
+      this.$interval.cancel(this.interval);
+      this.interval = undefined;
+    }
+  }
+
+  resetGame() {
+     this.pauseGame();
+     this.timer = new Timer();
   }
 
   _setUpGame() {

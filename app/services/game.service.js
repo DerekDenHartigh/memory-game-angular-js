@@ -1,5 +1,4 @@
 import Card from '../models/card.js';
-import Timer from '../models/timer.js';
 
 class GameService {
   /**
@@ -12,8 +11,6 @@ class GameService {
     this.matchedCards = [];
     this.flippedCards = [];
     this.IMAGE_DIR = '../../assets/images';
-
-    this.timer = new Timer();
   }
 
   /**
@@ -174,16 +171,6 @@ class GameService {
         return card;
       }
     }
-  }
-
-  start(){
-    console.log('game srvice start called: ');
-  }
-  pause() {
-    console.log('game service pause called');
-  }
-  reset() {
-    console.log('game service reset called');
   }
 }
 
