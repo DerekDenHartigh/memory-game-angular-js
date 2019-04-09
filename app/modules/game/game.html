@@ -1,4 +1,10 @@
 <div class="container">
+  Game Controls:
+  <game-controls start="ctrl.startGame()"
+                 pause="ctrl.pauseGame()"
+                 reset="ctrl.resetGame()"></game-controls>
+
+<game-timer timer="ctrl.timer"></game-timer>
   <div class="card-grid">
     <card ng-repeat="card in ctrl.GameService.cards track by card.id"
           id="card.id"
@@ -9,5 +15,3 @@
           order="card.order"></card>
   </div>
 </div>
-
-<timer></timer>
