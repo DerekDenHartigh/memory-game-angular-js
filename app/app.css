@@ -1,0 +1,35 @@
+@import './modules/card/card.css';
+@import './modules/game/game.css';
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* 320px or less */
+
+/* Typography */
+html {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #222;
+}
+.title {
+  text-align: center;
+}
+
+/* Containers */
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 320px;
+}
+
+/* Blocks */
+
+/* Helpers */
+.hide {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+}

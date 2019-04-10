@@ -1,14 +1,3 @@
-<div>
-  <label for="new-message">New Message</label>
-  <input name="new-message"
-         ng-model="ctrl.newMessage" />
-  <button ng-click="ctrl.addMessage(ctrl.newMessage)">
-    Add Message
-  </button>
-</div>
 <div class="container">
-  <list list-items="ctrl.messages"></list>
-</div>
-<div class="container">
-  Game: <game difficulty="'easy'"></game>
+  <game difficulty="'easy'"></game>
 </div>

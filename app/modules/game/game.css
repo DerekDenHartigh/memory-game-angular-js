@@ -1,0 +1,27 @@
+@import './controls/controls.css';
+@import './timer/timer.css';
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px auto;
+  max-width: 290px;
+}
+
+.card {
+  flex: 0 1 85px;
+  height: 85px;
+
+  border: 1px black solid;
+  margin: 2.5px 2.5px;
+}
+.card:hover {
+  background: rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+.card.matched {
+  border-color: #CAE2BC;
+  cursor: default;
+  opacity: .4;
+}

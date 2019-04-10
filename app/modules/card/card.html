@@ -1,13 +1,10 @@
-<div ng-class="{ 'matched' : ctrl.isMatched }"
-     ng-style="{ 'order': ctrl.order || '0'}"
-     class="card">
-  <div class="card-inner"
-       ng-click="ctrl.isFlipped = !ctrl.isFlipped"
-       ng-class="{ 'card-inner__front' : ctrl.isFlipped, 'card-inner__back' : !ctrl.isFlipped }">
-    <span ng-if="!ctrl.isFlipped">{{ ctrl.id }}</span>
-    <img ng-if="ctrl.isFlipped"
-         ng-src="{{ ctrl.image }}"
-         alt="{{ ctrl.name }}"
-         title="Can you find the matching {{ ctrl.name }}?" />
-  </div>
+<div class="card-inner"
+     ng-click="ctrl.isFlipped = !ctrl.isFlipped"
+     ng-class="{ 'card-inner__front' : ctrl.isFlipped, 'card-inner__back' : !ctrl.isFlipped }">
+  <span ng-if="!ctrl.isFlipped">{{ ctrl.id }}</span>
+  <img ng-if="ctrl.isFlipped"
+       ng-src="{{ ctrl.image }}"
+       alt="{{ ctrl.name }}"
+       class="card-image"
+       title="Can you find the matching {{ ctrl.name }}?" />
 </div>
