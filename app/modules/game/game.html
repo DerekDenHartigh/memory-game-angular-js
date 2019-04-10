@@ -16,7 +16,6 @@
         class="card"
         order="card.order"></card>
 </div>
-<div class="modal"> <!--  ng-if="ctrl.won"> -->
-  <p>YOU'VE WON! Time taken: </p>
-  <game-timer timer="ctrl.timer"></game-timer>
+<div ng-if="ctrl.won">
+  YOU'VE WON! Time: <game-timer timer="ctrl.timer"></game-timer>
 </div>
