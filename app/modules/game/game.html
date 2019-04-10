@@ -12,6 +12,10 @@
         isMatched="card.isMatched"
         ng-class="{ 'matched' : card.isMatched }"
         ng-style="{ 'order': card.order || '0'}"
+        ng-click="ctrl.handleCardClick(card)"
         class="card"
         order="card.order"></card>
+</div>
+<div ng-if="ctrl.GameService.win">
+  YOU'VE WON!
 </div>

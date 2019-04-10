@@ -11,6 +11,7 @@ class GameService {
     this.matchedCards = [];
     this.flippedCards = [];
     this.IMAGE_DIR = '../../assets/images';
+    this.win = false;
   }
 
   /**
@@ -154,12 +155,7 @@ class GameService {
   }
 
   checkForWin() {
-    if (this.matchedCards.length === this.cards.length) {
-      this.pauseGame();
-      setTimeout(() => {
-        alert(`You've won with a time of: ${this.timer.getFullTimerString()}`);
-      }, 100);
-    }
+    return this.matchedCards.length === this.cards.length;
   }
 
   /**

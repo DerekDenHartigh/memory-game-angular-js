@@ -11,8 +11,8 @@ class CardComponent {
       image: '<',
       isFlipped: '<',
       isMatched: '<',
-      order: '<'
-    }
+      order: '<',
+    };
   }
 }
 

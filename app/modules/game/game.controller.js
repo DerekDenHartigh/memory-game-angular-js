@@ -7,6 +7,7 @@ class GameController {
     this.GameService = GameService;
 
     this.timer = new Timer();
+    this.won = false;
   }
 
   $onInit() {
@@ -34,6 +35,13 @@ class GameController {
      this.timer = new Timer();
   }
 
+  handleCardClick(card) {
+    console.log('handle card click called', card);
+    this.GameService.flipCard(card);
+    // TODO CHeck for win
+  }
+
+  /* Private Methods (methods that should not be used in the UI) go here */
   _setUpGame() {
     switch (this.difficulty) {
       case 'easy':
