@@ -11,7 +11,6 @@ class GameService {
     this.matchedCards = [];
     this.flippedCards = [];
     this.IMAGE_DIR = '../../assets/images';
-    this.win = false;
   }
 
   /**
@@ -89,6 +88,7 @@ class GameService {
   /**
    *  Handles the card flip game logic
    * @param {Card} card The card that is being flipped
+   * @return Whether or not the user has won the game.
    */
   flipCard(card) {
     // We don't want to do anything on matched cards
@@ -104,7 +104,6 @@ class GameService {
       // Check if two flipped cards match
       if (this.flippedCards.length === 2) {
         this.checkForMatch(this.flippedCards);
-        this.checkForWin();
       }
 
       // Flip the first two cards back if we have more than 2
@@ -125,6 +124,8 @@ class GameService {
       }
       this.findCardInGameDeck(cardToFlip.id).isFlipped = false;
     }
+
+    return this.checkForWin();
   }
 
   /**

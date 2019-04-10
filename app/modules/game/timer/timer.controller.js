@@ -6,7 +6,7 @@ class GameTimerController {
     }
 
     start() {
-        return this.getFulLTimerString();
+        return this.getFullTimerString();
     }
 
     getTimeString(timeType, zeroPadStart) {

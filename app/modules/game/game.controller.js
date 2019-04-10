@@ -37,9 +37,12 @@ class GameController {
 
   handleCardClick(card) {
     console.log('handle card click called', card);
-    this.GameService.flipCard(card);
+    if (this.GameService.flipCard(card)) {
+      this._handleWin();
+    }
     // TODO CHeck for win
   }
+
 
   /* Private Methods (methods that should not be used in the UI) go here */
   _setUpGame() {
@@ -60,6 +63,12 @@ class GameController {
         this.GameService.createCards(20);
         break;
     }
+  }
+
+  _handleWin() {
+    this.won = true;
+    this.pauseGame();
+    // this.winTime = this.timer.getFullTimerString();
   }
 }
 
