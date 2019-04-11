@@ -1,5 +1,5 @@
 <div class="card-inner"
-     ng-click="ctrl.isFlipped = !ctrl.isFlipped"
+     ng-click="ctrl.handleCardClick($event)"
      ng-class="{ 'card-inner__front' : ctrl.isFlipped, 'card-inner__back' : !ctrl.isFlipped }">
   <span ng-if="!ctrl.isFlipped">{{ ctrl.id }}</span>
   <img ng-if="ctrl.isFlipped"

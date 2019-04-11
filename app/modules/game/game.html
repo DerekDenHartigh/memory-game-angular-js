@@ -1,17 +1,20 @@
 <game-controls start="ctrl.startGame()"
                pause="ctrl.pauseGame()"
                reset="ctrl.resetGame()"></game-controls>
-
 <game-timer timer="ctrl.timer"></game-timer>
-<div class="card-grid">
+<div class="card-grid" ng-if="ctrl.interval || ctrl.won">
   <card ng-repeat="card in ctrl.GameService.cards track by card.id"
         id="card.id"
         name="card.name"
         image="card.image"
-        isFlipped="card.isFlipped"
-        isMatched="card.isMatched"
+        is-flipped="card.isFlipped"
+        is-matched="card.isMatched"
         ng-class="{ 'matched' : card.isMatched }"
         ng-style="{ 'order': card.order || '0'}"
+        on-card-click="ctrl.handleCardClick(card)"
         class="card"
         order="card.order"></card>
+</div>
+<div ng-if="ctrl.won">
+  YOU'VE WON! Time: <game-timer timer="ctrl.timer"></game-timer>
 </div>

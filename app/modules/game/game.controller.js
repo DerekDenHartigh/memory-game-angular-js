@@ -7,6 +7,7 @@ class GameController {
     this.GameService = GameService;
 
     this.timer = new Timer();
+    this.won = false;
   }
 
   $onInit() {
@@ -22,7 +23,6 @@ class GameController {
   }
 
   pauseGame() {
-
     if (this.interval) {
       this.$interval.cancel(this.interval);
       this.interval = undefined;
@@ -32,8 +32,22 @@ class GameController {
   resetGame() {
      this.pauseGame();
      this.timer = new Timer();
+     this.won = false;
+     this._setUpGame();
   }
 
+  /**
+   * Calls the game service to flip the card and then _handleWin
+   * @param {Card} card The card that was clicked
+   */
+  handleCardClick(card) {
+    if (this.GameService.flipCard(card)) {
+      this._handleWin();
+    }
+  }
+
+
+  /* Private Methods (methods that should not be used in the UI) go here */
   _setUpGame() {
     switch (this.difficulty) {
       case 'easy':
@@ -52,6 +66,11 @@ class GameController {
         this.GameService.createCards(20);
         break;
     }
+  }
+
+  _handleWin() {
+    this.pauseGame();
+    this.won = true;
   }
 }
 
