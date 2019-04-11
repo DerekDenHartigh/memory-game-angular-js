@@ -12,6 +12,7 @@ class CardComponent {
       isFlipped: '<',
       isMatched: '<',
       order: '<',
+      onCardClick: '&',
     };
   }
 }

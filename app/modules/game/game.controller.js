@@ -35,12 +35,14 @@ class GameController {
      this.timer = new Timer();
   }
 
+  /**
+   * Calls the game service to flip the card and then _handleWin
+   * @param {Card} card The card that was clicked
+   */
   handleCardClick(card) {
-    console.log('handle card click called', card);
     if (this.GameService.flipCard(card)) {
       this._handleWin();
     }
-    // TODO CHeck for win
   }
 
 
