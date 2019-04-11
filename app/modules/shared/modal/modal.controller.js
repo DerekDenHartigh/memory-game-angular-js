@@ -5,6 +5,8 @@ class ModalController {
   }
   $onInit() {
     // initialize variables
+    this.showButtonCancel = true;
+    this.showButtonSubmit = true;
   }
 }
 

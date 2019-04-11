@@ -7,7 +7,13 @@ class ModalComponent {
     this.controllerAs = 'ctrl';
     this.bindings = {
       showModal: '<',
+      showButtonCancel: '<',
+      showButtonSubmit: '<',
+      buttonCancelText: '<',
+      buttonSubmitText: '<',
       modalTitle: '<',
+      modalContent: '<',
+      onSubmit: '&',
     };
   }
 }

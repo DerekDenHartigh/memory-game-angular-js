@@ -16,7 +16,8 @@
   margin: auto;
   position: absolute;
   top:0; left: 0; bottom: 0; right: 0;
-
+  border-radius: 4px;
+  border: 1px solid transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,12 +30,24 @@
 }
 .modal-header {
   display: flex;
+  color: #666;
+  background: #F2F2F2;
   justify-content: space-between;
-  border-bottom: 1px #ccc solid;
+  align-items: center;
 }
-.modal-title {
-  text-transform: uppercase;
+.modal-close {
+  cursor: pointer;
+}
+.modal-close:hover {
+  color: #F694C1
 }
 .modal-footer {
-  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #F2F2F2;
+}
+.modal-footer > .button {
+  flex: 0 1 20%;
+  margin-left: 15px;
 }
