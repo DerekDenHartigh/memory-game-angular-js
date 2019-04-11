@@ -8,6 +8,7 @@ class GameController {
 
     this.timer = new Timer();
     this.won = false;
+    this.showModal = true;
   }
 
   $onInit() {

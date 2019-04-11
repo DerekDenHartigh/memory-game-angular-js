@@ -1,0 +1,17 @@
+<div ng-if="ctrl.showModal" class="modal-wrapper">
+  <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">{{ ctrl.modalTitle || 'I am a modal'}}</div>
+        <div class="modal-toolbar-buttons">
+          <div ng-click="ctrl.showModal = false">x</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        I am a modal. Look at my modal-liciousness.
+      </div>
+      <div class="modal-footer">
+        <div class="button button-pause">Cancel</div>
+        <div class="button button-go">Submit</div>
+      </div>
+  </div>
+</div>

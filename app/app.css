@@ -1,9 +1,10 @@
+@import './modules/shared/modal/modal.css';
 @import './modules/card/card.css';
 @import './modules/game/game.css';
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-
+html { position: relative; }
 /* 320px or less */
 
 /* Typography */
