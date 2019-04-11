@@ -10,16 +10,16 @@
       </div>
     </div>
     <div class="modal-body">
-      {{ ctrl.modalContent }}
+      <ng-transclude></ng-transclude>
     </div>
     <div class="modal-footer" ng-class="{ 'bg-white' : !(ctrl.showButtonCancel || ctrl.showButtonSubmit) }">
       <div class="button button-pause"
-           ng-if="ctrl.showButtonCancel"
+           ng-if="ctrl.buttonCancelText"
            ng-click="ctrl.showModal = false">
         {{ ctrl.buttonCancelText || 'Cancel' }}
       </div>
       <div class="button button-go"
-           ng-if="ctrl.showButtonSubmit"
+           ng-if="ctrl.buttonSubmitText"
            ng-click="ctrl.onSubmit($event)"
            >
         {{ ctrl.buttonSubmitText || 'Submit' }}

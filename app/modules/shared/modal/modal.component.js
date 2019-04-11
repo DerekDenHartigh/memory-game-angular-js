@@ -5,6 +5,7 @@ class ModalComponent {
     this.templateUrl = './modules/shared/modal/modal.html';
     this.controller = ModalController;
     this.controllerAs = 'ctrl';
+    this.transclude = true;
     this.bindings = {
       showModal: '<',
       showButtonCancel: '<',
