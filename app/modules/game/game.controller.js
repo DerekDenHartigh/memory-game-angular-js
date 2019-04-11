@@ -23,7 +23,6 @@ class GameController {
   }
 
   pauseGame() {
-
     if (this.interval) {
       this.$interval.cancel(this.interval);
       this.interval = undefined;
@@ -33,6 +32,8 @@ class GameController {
   resetGame() {
      this.pauseGame();
      this.timer = new Timer();
+     this.won = false;
+     this._setUpGame();
   }
 
   /**
@@ -68,9 +69,8 @@ class GameController {
   }
 
   _handleWin() {
-    this.won = true;
     this.pauseGame();
-    // this.winTime = this.timer.getFullTimerString();
+    this.won = true;
   }
 }
 

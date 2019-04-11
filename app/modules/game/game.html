@@ -2,7 +2,7 @@
                pause="ctrl.pauseGame()"
                reset="ctrl.resetGame()"></game-controls>
 <game-timer timer="ctrl.timer"></game-timer>
-<div class="card-grid">
+<div class="card-grid" ng-if="ctrl.interval || ctrl.won">
   <card ng-repeat="card in ctrl.GameService.cards track by card.id"
         id="card.id"
         name="card.name"
