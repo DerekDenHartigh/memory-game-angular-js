@@ -1,8 +1,9 @@
 <game-controls start="ctrl.startGame()"
-               pause="ctrl.pauseGame()"
+               pause="ctrl.pauseGame(true)"
                reset="ctrl.resetGame()"></game-controls>
 <game-timer timer="ctrl.timer"></game-timer>
-<div class="card-grid" ng-if="ctrl.interval || ctrl.won">
+<div class="card-grid"
+     ng-if="ctrl.interval || ctrl.won">
   <card ng-repeat="card in ctrl.GameService.cards track by card.id"
         id="card.id"
         name="card.name"
@@ -15,6 +16,16 @@
         class="card"
         order="card.order"></card>
 </div>
-<div ng-if="ctrl.won">
-  YOU'VE WON! Time: <game-timer timer="ctrl.timer"></game-timer>
-</div>
+
+<modal show-modal="ctrl.showModal"
+       modal-title="ctrl.modalTitle"
+       modal-content="ctrl.modalContent"
+       button-submit-text="ctrl.modalButtonSubmitText"
+       on-submit="ctrl.handleModalOKClick()">
+  <div ng-if="ctrl.won"
+       class="text-center">YOU'VE WON! Time: <game-timer timer="ctrl.timer"></game-timer>
+  </div>
+  <div ng-if="ctrl.pausedByUser"
+       class="text-center">The game is paused.</div>
+  </div>
+</modal>

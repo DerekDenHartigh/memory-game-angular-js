@@ -7,7 +7,9 @@ class GameController {
     this.GameService = GameService;
 
     this.timer = new Timer();
+    this.pausedByUser = false;
     this.won = false;
+    this.showModal = false;
   }
 
   $onInit() {
@@ -22,18 +24,23 @@ class GameController {
     }
   }
 
-  pauseGame() {
+  pauseGame(userPaused) {
     if (this.interval) {
       this.$interval.cancel(this.interval);
       this.interval = undefined;
+      if (userPaused) {
+        this.pausedByUser = true; this.modalTitle = "Game paused";
+        this.modalButtonSubmitText = 'Resume';
+        this.showModal = true;
+      }
     }
   }
 
   resetGame() {
-     this.pauseGame();
-     this.timer = new Timer();
-     this.won = false;
-     this._setUpGame();
+    this.pauseGame();
+    this.timer = new Timer();
+    this.won = false;
+    this._setUpGame();
   }
 
   /**
@@ -44,6 +51,14 @@ class GameController {
     if (this.GameService.flipCard(card)) {
       this._handleWin();
     }
+  }
+
+  handleModalOKClick() {
+    if (this.pausedByUser) {
+      this.pausedByUser = false;
+      this.startGame();
+    }
+    this.showModal = false;
   }
 
 
@@ -71,6 +86,10 @@ class GameController {
   _handleWin() {
     this.pauseGame();
     this.won = true;
+    this.modalTitle = "You've won!";
+    this.modalButtonSubmitText = 'OK';
+    this.showModal = true;
+
   }
 }
 
